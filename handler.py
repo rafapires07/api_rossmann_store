@@ -1,12 +1,13 @@
 import pickle
 import pandas as pd
 import os
+import xgboost as xgb
 
 from flask import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
 # Carregar modelo de ML
-model = pickle.load( open( 'model/xgb_tuned.pkl', 'rb') )
+model = pickle.load( open( '/model/xgb_tuned.pkl','rb') )
 
 # Inicializar API com flask
 app = Flask( __name__ )
