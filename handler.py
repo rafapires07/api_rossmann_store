@@ -10,7 +10,7 @@ model = pickle.load( open( 'model/xgb_tuned.pkl', 'rb') )
 
 # Inicializar API com flask
 app = Flask( __name__ )
-
+    
 @app.route( '/rossmann/predict', methods=['POST'] )
 
 def rossmann_predict():
@@ -44,4 +44,4 @@ def rossmann_predict():
 
 if __name__ == '__main__':
     port = os.environ.get('PORT',5000)
-    app.run( host='127.0.0.1', port=port )
+    app.run( host='0.0.0.0', port=port )
